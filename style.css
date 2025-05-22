@@ -99,11 +99,25 @@ body {
 
 /* Seção Hero */
 .hero {
-    background: linear-gradient(135deg, #1a2a6c 0%, #b21f1f 50%, #fdbb2d 100%);
+    background: linear-gradient(-45deg, #0a1a3a, #27276f, #170d44, #3b3a3a);
+    animation: gradient 15s ease infinite;
     color: white;
     padding: 50px 0;
     position: relative;
+    background-size: 400% 400%;
 }
+
+@keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 
 .hero::before {
     content: '';
@@ -112,7 +126,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(./img/Title Page);
+    background-image: url(./img/Title);
     background-size: 50px 50px;
     opacity: 0.5;
 }
@@ -206,7 +220,7 @@ body {
 
 .section-header h2 {
     font-size: 2.5rem;
-    color: #111827;
+    color: #ffffff;
     margin-bottom: 15px;
 }
 
@@ -287,6 +301,11 @@ body {
     object-fit: cover;
 }
 
+.service-card h3 {
+    text-align: center;
+    line-height: .5;
+}
+
 .service-content {
     padding: 25px;
 }
@@ -345,6 +364,12 @@ body {
     width: 100%;
     border-radius: 10px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.about-image img:hover {
+    transform: scale(1.03);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
 }
 
 .about-text {
@@ -682,6 +707,19 @@ body {
 
 .back-to-top:hover {
     background-color: #fbbf24;
+}
+
+.footer .footer-logo {
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem 0;
+}
+
+.footer .footer-links {
+    display: flex;
+    justify-content: center;
+
+
 }
 
 /* Responsividade */
