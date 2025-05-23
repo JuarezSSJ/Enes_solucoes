@@ -20,8 +20,8 @@ body {
 
 /* Barra de Alerta */
 .alert-bar {
-    background-color: #b91c1c;
-    color: white;
+    background-color: #fcbe00;
+    color: black;
     padding: 10px 0;
     text-align: center;
 }
@@ -33,7 +33,7 @@ body {
 }
 
 .alert-bar a {
-    color: white;
+    color: black;
     text-decoration: none;
 }
 
@@ -64,13 +64,20 @@ body {
     gap: 10px;
 }
 
-.logo i {
-    color: #f59e0b;
+.logo img {
+    color: #fcbe00;
+    font-size: 1.8rem;
+    height: 3rem;
+}
+
+.logo span {
+    color: #fff;
     font-size: 1.5rem;
 }
 
 .logo span span {
-    color: #f59e0b;
+    color: #fcbe00;
+    font-size: 1.5rem;
 }
 
 .menu {
@@ -220,7 +227,14 @@ body {
 
 .section-header h2 {
     font-size: 2.5rem;
-    color: #ffffff;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.section-header-contato h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #000000;
     margin-bottom: 15px;
 }
 
@@ -228,7 +242,7 @@ body {
     width: 100px;
     height: 3px;
     background-color: #f59e0b;
-    margin: 0 auto;
+    margin: 1rem auto;
 }
 
 .features-grid {
@@ -263,7 +277,7 @@ body {
 
 /* Seção Serviços */
 .services {
-    padding: 80px 0;
+    padding: 0px 0;
     background-color: #f3f4f6;
     position: relative;
 }
@@ -275,6 +289,14 @@ body {
         linear-gradient(45deg, transparent 75%, #fdbb2d 75%),
         linear-gradient(-45deg, transparent 75%, #fdbb2d 75%);
     background-size: 100px 100px;
+}
+
+.section-header-nossos-serv h2 {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 2.5rem;
+    color: #000000;
+    margin-bottom: 15px;
 }
 
 .services-grid {
@@ -437,15 +459,8 @@ body {
 
 .clients-logos img {
     width: 100%;
-    height: auto;
-    filter: grayscale(100%);
-    opacity: 0.7;
-    transition: all 0.3s;
-}
+    height: 10rem;
 
-.clients-logos img:hover {
-    filter: grayscale(0);
-    opacity: 1;
 }
 
 .testimonials {
@@ -509,7 +524,7 @@ body {
 
 /* Seção Contato */
 .contact {
-    padding: 80px 0;
+    padding: 30px 0;
     background-color: #f3f4f6;
 }
 
@@ -612,20 +627,30 @@ body {
 }
 
 .social-icons a {
-    background-color: #111827;
-    color: white;
-    width: 45px;
-    height: 45px;
+    color: #fcbe00;
+    width: 3rem;
+    height: 3rem;
     border-radius: 50%;
-    display: flex;
+    display: inline-flex;
+    margin-right: 3rem; 
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
+    font-size: 2.5rem;
     transition: background-color 0.3s;
 }
 
-.social-icons a:hover {
-    background-color: #f59e0b;
+.social-icons-h3 { 
+    text-align: center;
+    margin-left: 0.5rem;
+    padding: 0.7rem;
+}
+
+.social-icons-h3 h3{
+    font-size: 1.5rem;
+}
+
+.social-icons-h3 h3:hover{
+    transform: scale(1.05); 
 }
 
 /* Seção Mapa */
