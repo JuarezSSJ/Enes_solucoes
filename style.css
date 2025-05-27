@@ -227,10 +227,19 @@ body {
 
 .section-header h2 {
     font-size: 2.5rem;
+    color: #000000;
+    margin-bottom: 15px;
+}
+.section-header-cliente {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header-cliente h2 {
+    font-size: 2.5rem;
     color: #fff;
     margin-bottom: 15px;
 }
-
 .section-header-contato h2 {
     text-align: center;
     font-size: 2.5rem;
@@ -280,6 +289,7 @@ body {
     padding: 0px 0;
     background-color: #f3f4f6;
     position: relative;
+    margin-bottom: 2rem;
 }
 
 .zigzag-divider {
@@ -368,7 +378,7 @@ body {
 
 /* Seção Sobre */
 .about {
-    padding: 80px 0;
+    padding: 40px 0;
     background-color: white;
 }
 
@@ -444,7 +454,7 @@ body {
 
 /* Seção Clientes */
 .clients {
-    padding: 80px 0;
+    padding: 40px 0;
     background-color: #111827;
     color: white;
 }
