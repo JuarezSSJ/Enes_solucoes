@@ -116,15 +116,17 @@ body {
 
 @keyframes gradient {
     0% {
-      background-position: 0% 50%;
+        background-position: 0% 50%;
     }
+
     50% {
-      background-position: 100% 50%;
+        background-position: 100% 50%;
     }
+
     100% {
-      background-position: 0% 50%;
+        background-position: 0% 50%;
     }
-  }
+}
 
 .hero::before {
     content: '';
@@ -230,6 +232,7 @@ body {
     color: #000000;
     margin-bottom: 15px;
 }
+
 .section-header-cliente {
     text-align: center;
     margin-bottom: 60px;
@@ -240,6 +243,7 @@ body {
     color: #fff;
     margin-bottom: 15px;
 }
+
 .section-header-contato h2 {
     text-align: center;
     font-size: 2.5rem;
@@ -335,7 +339,7 @@ body {
 
 .service-card h3 {
     text-align: center;
-    line-height: .5;
+    line-height: 1.2;
 }
 
 .service-content {
@@ -642,25 +646,25 @@ body {
     height: 3rem;
     border-radius: 50%;
     display: inline-flex;
-    margin-right: 3rem; 
+    margin-right: 3rem;
     align-items: center;
     justify-content: center;
     font-size: 2.5rem;
     transition: background-color 0.3s;
 }
 
-.social-icons-h3 { 
+.social-icons-h3 {
     text-align: center;
     margin-left: 0.5rem;
     padding: 0.7rem;
 }
 
-.social-icons-h3 h3{
+.social-icons-h3 h3 {
     font-size: 1.5rem;
 }
 
-.social-icons-h3 h3:hover{
-    transform: scale(1.05); 
+.social-icons-h3 h3:hover {
+    transform: scale(1.05);
 }
 
 /* Seção Mapa */
@@ -672,28 +676,6 @@ body {
     width: 100%;
     height: 100%;
     border: none;
-}
-
-/* Responsividade */
-@media (max-width: 992px) {
-    .about-content {
-        flex-direction: column;
-    }
-
-    .contact-content {
-        flex-direction: column;
-    }
-}
-
-@media (max-width: 768px) {
-    .form-row {
-        flex-direction: column;
-        gap: 0;
-    }
-
-    .stats-grid {
-        grid-template-columns: 1fr;
-    }
 }
 
 /* Botão do WhatsApp */
@@ -711,11 +693,16 @@ body {
     justify-content: center;
     font-size: 1.8rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    z-index: 99;
-    transition: transform 0.3s;
+    z-index: 1000;
+    /* Um valor alto para garantir que ele esteja sempre acima */
+    opacity: 0.3;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease;
+    /* Transição suave para opacidade e transformação */
 }
 
 .whatsapp-btn:hover {
+    opacity: 1;
+    /* Retorna à opacidade total (100% visível) ao passar o mouse */
     transform: scale(1.1);
 }
 
@@ -736,43 +723,315 @@ body {
     border: none;
     cursor: pointer;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    z-index: 99;
-    transition: all 0.3s;
+    z-index: 1000;
+    opacity: 0.2;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease;
+    /* Transição suave para opacidade e transformação */
 }
 
 .back-to-top:hover {
+    opacity: 1;
+    /* Retorna à opacidade total (100% visível) ao passar o mouse */
+    transform: scale(1.1);
     background-color: #fbbf24;
+}
+
+.footer {
+    background-color: #111827;
+    color: white;
+    position: sticky;
+    margin-top: 1rem;
+    z-index: 100;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
 }
 
 .footer .footer-logo {
     display: flex;
-    justify-content: center;
-    padding: 0.5rem 0;
+    align-items: center;
+    gap: 10px;
 }
 
-.footer .footer-links {
-    display: flex;
-    justify-content: center;
+.footer .footer-logo img {
+    color: #fcbe00;
+    font-size: 1.8rem;
+    height: 3rem;
+    margin-left: 1rem;
+}
 
+.footer .footer-logo span {
+    color: #fff;
+    font-size: 1.5rem;
+}
 
+.footer .footer-logo span span {
+    color: #fcbe00;
+    font-size: 1.5rem;
+}
+
+.footer .container p {
+    text-align: center;
+    /* Garante que o texto dentro do parágrafo esteja centralizado */
+    width: 80%;
 }
 
 /* Responsividade */
-@media (max-width: 768px) {
+/* Telas muito grandes (desktops) */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1300px;
+        /* Aumenta um pouco mais o container para telas muito largas */
+    }
+}
+
+
+/* Telas grandes (desktops e notebooks) */
+@media (max-width: 1200px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .section-header h2,
+    .section-header-cliente h2,
+    .section-header-nossos-serv h2,
+    .contact-form h3,
+    .contact-info h3 {
+        font-size: 2rem;
+    }
+}
+
+/* Telas médias (tablets em modo paisagem, laptops menores) */
+@media (max-width: 992px) {
+    .navbar .container {
+        flex-wrap: wrap;
+        /* Centraliza itens se quebrarem */
+        gap: 15px;
+    }
+
     .menu {
         display: none;
+        /* Esconde o menu desktop por padrão em telas menores */
+        width: 100%;
+        /* Ocupa a largura total para o menu mobile */
+        flex-direction: column;
+        /* Links um abaixo do outro */
+        gap: 15px;
+        /* Espaço entre os links */
+        text-align: center;
+        padding: 20px 0;
+        background-color: #111827;
+        /* Fundo para o menu mobile */
+    }
+
+    /* Adicione uma classe "active" via JavaScript para mostrar este menu */
+    .menu.active {
+        display: flex;
     }
 
     .mobile-menu-btn {
         display: block;
+        /* Mostra o botão de menu mobile */
     }
 
     .hero .container {
         flex-direction: column;
+        /* Empilha o conteúdo e a imagem */
+        text-align: center;
     }
 
-    .hero-content,
+    .hero-content {
+        order: 2;
+        /* Move o conteúdo para baixo da imagem (opcional, mas comum) */
+    }
+
     .hero-image {
+        order: 1;
+        /* Move a imagem para cima do conteúdo */
+        margin-bottom: 30px;
+        /* Espaço entre imagem e conteúdo */
+    }
+
+    .hero-image img {
+        height: 25rem;
+        /* Ajusta a altura da imagem hero */
+        width: 25rem;
+        /* Ajusta a largura da imagem hero */
+    }
+
+    .about-content {
+        flex-direction: column;
+        /* Empilha a imagem e o texto sobre nós */
+        gap: 30px;
+    }
+
+    .about-image {
         width: 100%;
+        /* Imagem ocupa 100% da largura disponível */
+    }
+
+    .contact-content {
+        flex-direction: column;
+        /* Empilha o formulário e as informações de contato */
+        gap: 30px;
+    }
+
+    .clients-logos {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        /* Reduz o min-width para logos */
+        gap: 20px;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        /* Um depoimento por linha */
+    }
+
+    .footer .footer-links {
+        flex-direction: column;
+        /* Empilha os links no rodapé */
+        text-align: center;
+    }
+
+    .footer .footer-links p {
+        margin-top: 15px;
+        /* Ajusta espaçamento */
+    }
+}
+
+/* Telas pequenas (celulares) */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+        /* Reduz o padding lateral para telas menores */
+    }
+
+    .alert-bar .container span,
+    .alert-bar .container a {
+        font-size: 0.9rem;
+        /* Reduz o tamanho da fonte na barra de alerta */
+    }
+
+    .logo span {
+        font-size: 1.2rem;
+    }
+
+    .logo span span {
+        font-size: 1.2rem;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        /* Botões empilhados */
+        align-items: center;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        /* Botões ocupam largura total */
+        max-width: 300px;
+        /* Limita a largura máxima para não ficarem muito largos */
+    }
+
+    .hero-image img {
+        height: 20rem;
+        /* Reduz ainda mais a imagem hero */
+        width: 20rem;
+        /* Reduz ainda mais a imagem hero */
+    }
+
+    .section-header h2,
+    .section-header-cliente h2,
+    .section-header-nossos-serv h2,
+    .contact-form h3,
+    .contact-info h3 {
+        font-size: 1.8rem;
+        /* Reduz o tamanho da fonte dos títulos */
+    }
+
+    .features-grid,
+    .services-grid {
+        grid-template-columns: 1fr;
+        /* Um item por linha */
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+        /* Um stat por linha */
+        gap: 15px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        /* Campos do formulário empilhados */
+        gap: 15px;
+    }
+
+    .social-icons a {
+        margin-right: 1.5rem;
+        /* Ajusta espaçamento entre ícones sociais */
+    }
+
+    .social-icons-h3 h3 {
+        font-size: 1.2rem;
+        /* Reduz tamanho do texto do Instagram no mobile */
+    }
+
+    .map {
+        height: 300px;
+        /* Altura menor para o mapa em telas pequenas */
+    }
+
+    .whatsapp-btn,
+    .back-to-top {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+        bottom: 20px;
+        right: 20px;
+        left: 20px;
+    }
+}
+
+/* Telas muito pequenas (smartphones pequenos) */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero-image img {
+        height: 15rem;
+        width: 15rem;
+    }
+
+    .section-header h2,
+    .section-header-cliente h2,
+    .section-header-nossos-serv h2,
+    .contact-form h3,
+    .contact-info h3 {
+        font-size: 1.5rem;
+    }
+
+    .clients-logos {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        /* Min-width menor para logos */
     }
 }

@@ -37,12 +37,12 @@ menuLinks.forEach(link => {
 
 // Efeito suave ao rolar para seções
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+    anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        
+
         const targetId = this.getAttribute('href');
         const targetElement = document.querySelector(targetId);
-        
+
         if (targetElement) {
             window.scrollTo({
                 top: targetElement.offsetTop - 80,
@@ -50,4 +50,33 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             });
         }
     });
+});
+
+const myForm = document.getElementById('myForm');
+
+myForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const nome = document.getElementById('nome').value;
+    const email = document.getElementById('email').value;
+    const telefone = document.getElementById('telefone').value;
+    const mensagem = document.getElementById('mensagem').value;
+
+    // Monta a mensagem para o WhatsApp com as variáveis
+    // É importante codificar a URI para evitar problemas com caracteres especiais
+    const mensagemWhatsApp = `Olá, meu nome é ${nome}. Meu e-mail é ${email} e meu telefone é ${telefone}. Gostaria de falar sobre: ${mensagem}`;
+    const mensagemCodificada = encodeURIComponent(mensagemWhatsApp);
+
+    // Número de telefone para o WhatsApp (exemplo)
+    const numeroWhatsApp = '5571988343422'; // Seu número de WhatsApp
+
+    // Cria o link completo do WhatsApp
+    const linkWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensagemCodificada}`;
+
+    // Abre o link do WhatsApp em uma nova aba
+    window.open(linkWhatsApp, '_blank');
+
+    // Opcional: Limpar o formulário após o envio
+    myForm.reset();
+
 });
